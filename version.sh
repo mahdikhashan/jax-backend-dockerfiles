@@ -40,7 +40,7 @@ echo ""
 
 echo "=== Gloo Information ==="
 echo "Gloo: Built from source (commit 43b7acbf372cdce14075f3526e39153b7e433b53)"
-if [ -f /usr/local/lib/libgloo.so ]; then
+if [ -f /usr/local/lib/libgloo.a ]; then
     echo "Gloo library: Found at /usr/local/lib/libgloo.so"
 else
     echo "Gloo library: Not found"
