@@ -50,4 +50,5 @@ WORKDIR /workspace
 COPY version.sh /version.sh
 RUN chmod +x /version.sh
 
-ENTRYPOINT ["/bin/bash", "-c", "/version.sh && /bin/bash"]
+ENTRYPOINT ["/bin/bash", "-c", "/version.sh && exec \"$@\"", "--"]
+CMD ["/bin/bash"]
