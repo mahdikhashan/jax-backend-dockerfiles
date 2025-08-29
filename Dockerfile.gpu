@@ -1,0 +1,18 @@
+FROM ghcr.io/nvidia/jax:jax
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        cmake \
+        git \
+        libgoogle-glog-dev \
+        libgflags-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+
+COPY test_jax_backends.py .
+
+CMD ["python3", "test_jax_backends.py"]
